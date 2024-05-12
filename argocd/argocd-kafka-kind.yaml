@@ -9,7 +9,7 @@ spec:
   project: default
   destination:
     name: 'dev'
-    namespace: kafka-cluster
+    namespace: kafka
   source:
     path: kafka-cluster-instance/
     repoURL: 'https://github.com/fdaluisio/apache-kafka.git'
