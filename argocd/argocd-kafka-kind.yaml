@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dev-kafka-cluster
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  destination:
+    name: 'dev'
+    namespace: kafka-cluster
+  source:
+    path: kafka-cluster-instance/
+    repoURL: 'https://github.com/fdaluisio/apache-kafka.git'
+    targetRevision: HEAD
+  syncPolicy: {}
